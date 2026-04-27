@@ -10,25 +10,30 @@ export default function TestInlineModal() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <InlineModalProvider>
-      <View style={styles.container}>
-        <Text style={styles.title}>InlineModal Test</Text>
-        <Text style={styles.providerText}>Full Screen Provider</Text>
-        <View style={styles.spacing} />
-        <Button title="Open Inline Modal" onPress={() => setIsOpen(true)} />
-        <InlineModal isOpen={isOpen} onDismiss={() => setIsOpen(false)}>
-          <View style={styles.modalContent}>
-            <PressableWithFeedback style={styles.pressable}>
-              <Text style={styles.text}>Test Pressable</Text>
-            </PressableWithFeedback>
-            <View style={styles.spacing} />
-            <Text style={styles.modalTitle}>Inline Modal Content</Text>
-            <View style={styles.spacing} />
-            <Button title="Dismiss from JS" onPress={() => setIsOpen(false)} />
-          </View>
-        </InlineModal>
-      </View>
-    </InlineModalProvider>
+    <View style={styles.container}>
+      <InlineModalProvider>
+        <View style={styles.container}>
+          <Text style={styles.title}>InlineModal Test</Text>
+          <Text style={styles.providerText}>Full Screen Provider</Text>
+          <View style={styles.spacing} />
+          <Button title="Open Inline Modal" onPress={() => setIsOpen(true)} />
+          <InlineModal isOpen={isOpen} onDismiss={() => setIsOpen(false)}>
+            <View style={styles.modalContent}>
+              <PressableWithFeedback style={styles.pressable}>
+                <Text style={styles.text}>Test Pressable</Text>
+              </PressableWithFeedback>
+              <View style={styles.spacing} />
+              <Text style={styles.modalTitle}>Inline Modal Content</Text>
+              <View style={styles.spacing} />
+              <Button
+                title="Dismiss from JS"
+                onPress={() => setIsOpen(false)}
+              />
+            </View>
+          </InlineModal>
+        </View>
+      </InlineModalProvider>
+    </View>
   );
 }
 
