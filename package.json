@@ -223,6 +223,9 @@
         },
         "RNSModalFormSheet": {
           "className": "RNSModalFormSheetComponentView"
+        },
+        "RNSInlineModalProvider": {
+          "className": "RNSInlineModalProviderComponentView"
         }
       }
     }
